@@ -1,0 +1,75 @@
+.html1 {
+    height: 100%;
+    width: 100%;
+    background: url("../images/wall2.jpg") no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.htmljade {
+    background-color:black;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+#map {
+    height: 82%;
+    width:70%;
+    position:absolute;
+    top:60px;
+    left:400px;
+    
+}
+
+
+
+h1,h2,h3,h4,h5,h6,a{
+  color: rgb(255, 255, 255); 
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.home1h1 {
+    position: absolute;
+    left: 0;
+    top: -50px;
+    width: 100%;
+    text-align: center;
+    font-size: 5em;
+}
+
+#policy {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+#link_face {
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    text-align: center;
+}
+
+.circle {
+    position: absolute;
+    top: 20px;
+    left: 290px;
+    border-radius: 50%;
+}
+
+.log {
+    height: 35px;
+    width: 200px;
+}

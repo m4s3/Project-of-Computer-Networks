@@ -1,0 +1,25 @@
+doctype html
+html(class = "htmljade")
+  head
+    title=title
+    meta(name = "viewport" content = "initial-scale=1.0")
+    meta(charset = "utf-8")
+    link(rel = 'stylesheet', href = '/stylesheets/style.css')
+    script(src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
+    script.
+      var url='https://rdc-project-maseeeeeee-1.c9users.io/users/data_friends';
+      var array_luoghi = !{tagged_places};
+      var array_foto = !{photos};
+    script(src = "/javascripts/maps.js")
+  body(class = "htmljade")
+    h1=name
+    img(class = "circle" src = picture)
+    table(name = "finder_table")
+      tr
+        td
+          input(type = "text" name = "place" id = "place" size = "40" maxlength = "40" placeholder = "scegli un luogo")
+        td
+          button(name = "findplace" value = "cerca" onclick = "place()").
+            search
+    div(id = "map")
+    script(src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBM3zecGp9h-Z8BpdtGBXYjhLCyerbniro&callback=initMap" async defer)

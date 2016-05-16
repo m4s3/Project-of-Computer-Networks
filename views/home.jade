@@ -1,0 +1,90 @@
+doctype html
+html(class = "htmljade")
+  head
+    title=title
+    meta(name = "viewport" content = "initial-scale=1.0")
+    meta(charset = "utf-8")
+    link(rel = 'stylesheet', href = '/stylesheets/style.css')
+    script(src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
+    script.
+      history.pushState('','turnontrip','https://rdc-project-maseeeeeee-1.c9users.io/users/login');
+      var url='https://rdc-project-maseeeeeee-1.c9users.io/users/data_friends';
+      
+      
+      $(document).ready(function() {
+      
+        $('.tddin').click(function() {
+        
+          $.each(array_friends, function(index,value) {
+         
+           $('.tddin').append('<a id="'+value.id+'">' + value.name + '</a><br/>');
+           $('#'+value.id).click(function(){
+          
+            var form=$('<form action="'+ url +'" method="post">'+
+                '<input type="hidden" name="id" value="'+value.id+'">'+
+                '</form>');
+            $('body').append(form);
+            form.submit();
+           });
+          });
+          $(this).off('click');
+        });
+        $('#fr1').submit(function(){
+          var luogo = document.fr1.new_place.value;
+          var geocoder = new google.maps.Geocoder();
+          geocoder.geocode({
+            'address': luogo
+          }, function(results, status) {
+              if (!status == google.maps.GeocoderStatus.OK){
+                 alert("luogo inesistente");
+                 return false;
+              }
+          });
+        });
+      });
+      var ta="#{ta}";
+      var pa="#{pa}";
+      var array_luoghi = !{cord};
+      var array_foto = !{photos};
+      var array_friends = !{friends};
+  body(class = "htmljade")
+    h1=message
+    img(class = "circle" src = url)
+    table(name = "finder_table")
+      tr
+        td
+          input(type = "text" name = "place" id = "place" size = "40" maxlength = "40" placeholder = "scegli un luogo")
+        td
+          button(name = "findplace" value = "cerca" onclick = "place()").
+            search
+      tr(class = "trdin")
+        td(class="tddin")
+          h1 your friends:
+    form(method="post" action=" https://rdc-project-maseeeeeee-1.c9users.io/users/addplaces"  id="fr1" name="fr1" enctype="multipart/form-data")
+      table
+        tr
+          td
+            input(type="hidden" name="ta" value=""+ta)
+            input(type="hidden" name="pa" value=""+pa)
+        tr
+          td
+            input(type="file" name="places" multiple)
+        tr
+          td
+            input(type="text" name="new_place" placeholder="tagged_place"  required)
+        tr
+          td
+            input(type="submit" name="submit" value="condividi")
+    div(id = "map")
+    script(src = "/javascripts/maps.js")
+    script(src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBM3zecGp9h-Z8BpdtGBXYjhLCyerbniro&callback=initMap" async defer)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
